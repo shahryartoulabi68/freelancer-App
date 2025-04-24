@@ -43,7 +43,7 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
             editProject({ id: projectToEdit._id, newProject }, {
                 onSuccess: () => {
                     onClose();
-                    reset();
+                   
                 }
             })
         }

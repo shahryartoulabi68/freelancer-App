@@ -1,7 +1,6 @@
 import http from "./httpService";
 
 export default function getCategoryApi() {
-    console.log("sssssssllll");
     return http.get("/category/list").then(({ data }) => data.data)
 
 }

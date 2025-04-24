@@ -37,9 +37,10 @@ function App() {
         <Routes>
           <Route path='/auth' element={<Auth />} />
           <Route path='/complete-profile' element={<CompleteProfaile />} />
-          <Route path='/owner' element={<ProtectedRoute>
-            <OwnerLayoute />
-          </ProtectedRoute>}>
+          <Route path='/owner' element={
+            <ProtectedRoute>
+              <OwnerLayoute />
+            </ProtectedRoute>}>
             <Route index element={<Navigate to={"dashboard"} replace />} />
             <Route path='dashboard' element={<OwnerDashboard />} />
             <Route path='projects' element={<Projects />} />

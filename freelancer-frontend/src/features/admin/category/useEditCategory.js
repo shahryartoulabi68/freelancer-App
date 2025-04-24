@@ -13,7 +13,10 @@ export default function useEditCategory() {
                 queryKey: ["category"]
             })
         },
-        onError: (err) => toast.error(err?.response?.data?.message)
+        onError: (error) => {
+            console.log(error.reviow)
+            toast.error(error?.response?.data?.message)
+        }
 
     })
     return { isEditing, editCategory }

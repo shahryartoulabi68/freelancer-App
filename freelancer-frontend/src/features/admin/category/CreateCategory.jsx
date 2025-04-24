@@ -36,7 +36,6 @@ function CreateCategory({ onClose, Category = {} }) {
         }
 
         if (isEditSession) {
-            console.log(newCategory);
 
             editCategory({ id: Category._id, newCategory }, {
                 onSuccess: () => {

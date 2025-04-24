@@ -9,9 +9,6 @@ import { useForm } from 'react-hook-form'
 
 function CompleteProfailForm() {
     const { register, handleSubmit, watch } = useForm()
-    // const [name, setName] = useState("")
-    // const [email, setEmail] = useState("")
-    // const [role, setRole] = useState("")
     const navigate = useNavigate()
     const { isPending, mutateAsync } = useMutation({
         mutationFn: completeProfile,

@@ -31,7 +31,7 @@ function Authcontainer() {
             setStep(2)
         }
         catch (error) {            
-            toast.error(error?.response?.message)
+            toast.error(error?.response?.data?.message)
         }
     }
 

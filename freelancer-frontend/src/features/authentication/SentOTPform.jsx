@@ -19,7 +19,8 @@ function SentOTPform({ isPending, register, onSubmit }) {
 
                 />
                 <div>{isPending ? <Loading /> :
-                    <button type="onsubmit" className='btn btn--primary w-full'>ارسال کد تایید</button>}</div>
+                    <button type="onsubmit" className='btn btn--primary w-full'>ارسال کد تایید</button>}
+                </div>
             </form>
         </div>
     )

@@ -6,6 +6,7 @@ function Home() {
   return (
     <div className='container xl:max-w-screen-xl bg-secondary-0 h-screen p-10 text-center'>
       <h1 className='text-secondary-800'>خوش آمدید</h1>
+      <p></p>
       <Link to={"auth"}>
         برای ثبت نام اینجا کلیک کنید
       </Link>

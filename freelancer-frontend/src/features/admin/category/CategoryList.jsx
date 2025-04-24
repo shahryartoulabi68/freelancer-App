@@ -5,7 +5,6 @@ import CategoryRow from './CategoryRow';
 
 function CategoryList() {
     const { rowCategories } = useCategories()
-    console.log(rowCategories);
 
     return (
         <Table>

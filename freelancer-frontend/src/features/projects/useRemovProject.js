@@ -9,7 +9,7 @@ export default function useRemoveProject() {
         onSuccess: (data) => {
             toast.success(data.message)
             queryClient.invalidateQueries({
-                queryKey:["owner-projects"]
+                queryKey: ["owner-projects"]
             })
         },
         onError: (err) => {

@@ -17,6 +17,7 @@ function ProjectRow({ project, index }) {
     const { isDeleting, removeProject } = useRemoveProject();
     const [editOpen, setEditOpen] = useState(false)
     const [deleteOpen, setDeleteOpen] = useState(false)
+
     return (
         <Table.Row key={project._id} className='bg-secondary-0 border-b rounded-xl'>
             <td className='w-auto text-center p-2 text-secondary-600'>{index + 1}</td>
@@ -31,7 +32,7 @@ function ProjectRow({ project, index }) {
             <td className='w-auto text-center p-2 text-secondary-600'>
                 <ToggleProjectStatus project={project} />
             </td>
-            <td className='w-auto text-center p-2 text-secondary-600'>
+            <td className='w-auto p-2 text-secondary-600'>
                 <div className='flex items-center gap-4'>
                     <>
                         <button onClick={() => setEditOpen(true)}>
@@ -47,9 +48,7 @@ function ProjectRow({ project, index }) {
                         </button>
                         <Modal open={deleteOpen} title={`حذف ${project.title}`} onClose={() => setDeleteOpen(false)}>
                             <ConfirmDelete projectName={project.title}
-                                onConfirm={() => removeProject(project._id, {
-                                    onSuccess: (data) => setDeleteOpen(false)
-                                })}
+                                onConfirm={()=>removeProject(project?._id)}
                                 disabled={false}
                                 onClose={() => setDeleteOpen(false)} />
                         </Modal>
