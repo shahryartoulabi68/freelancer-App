@@ -1,6 +1,5 @@
 import React from 'react'
 import RHFselect from '../../../ui/RHFselect'
-import { useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import useChangeUserStatus from './useChangeUserStatus'
 import { useQueryClient } from '@tanstack/react-query'
@@ -28,11 +27,10 @@ function ChangeUserStatus({ onClose, userId }) {
     const queryClient = useQueryClient()
 
     const onSubmit = (data) => {
-        console.log(data);
         changeUserStatus({ userId, data }, {
             onSuccess: () => {
+                queryClient.invalidateQueries(["users"] )
                 onClose()
-                queryClient.invalidateQueries({ queryKey: ["users"] })
             }
         })
     }

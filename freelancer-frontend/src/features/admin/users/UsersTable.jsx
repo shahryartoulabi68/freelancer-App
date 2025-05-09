@@ -9,7 +9,7 @@ function UsersTable() {
 
 
   if (isLoading) return <p>در حال بارگذاری ....</p>
-  if (!users.length) return <p>پروژه ای وجد ندارد</p>;
+  if (!users.length) return <p>کاربری وجد ندارد</p>;
 
   return (
     <Table>

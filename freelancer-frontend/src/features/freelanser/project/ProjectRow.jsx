@@ -32,7 +32,7 @@ function ProjectRow({ project, index }) {
             <td className='w-auto text-center p-2 text-secondary-600'>
                 <span className={`badge ${projectStatus[status].className}`}>{projectStatus[status].label}</span>
             </td>
-            <td className='w-auto text-center p-2 text-secondary-600 flex items-center justify-center'>
+            <td className='w-auto  p-2 text-secondary-600 flex  justify-center'>
                 <Modal open={open} onClose={() => setOpen(false)} title={`درخواست انجام پروژه ${project.title}`}>
                     <CreateProposal onClose={() => setOpen(false)} projectId={project._id} />
                 </Modal>

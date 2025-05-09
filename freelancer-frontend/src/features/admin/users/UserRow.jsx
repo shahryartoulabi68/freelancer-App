@@ -39,7 +39,7 @@ function UserRow({ user, index }) {
                 <span className={`badge ${statusStyle[status].className}`}>{statusStyle[status].label}</span>
             </td>
 
-            <td className=' w-auto text-center p-2'>
+            <td className=' w-auto  p-2'>
                 <Modal onClose={() => setOpen(false)} open={open} title="تغییر وضعیت درخواست ها" >
                     <ChangeUserStatus userId={user._id} onClose={() => setOpen(false)} />
                 </Modal>

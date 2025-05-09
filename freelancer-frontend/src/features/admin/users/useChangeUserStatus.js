@@ -8,7 +8,6 @@ export default function useChangeUserStatus() {
         mutationFn: changeUserStatusApi,
         onSuccess: (data) => {
             toast.success(data.message)
-
         },
         onError: (err) => toast.error(err?.response?.data?.message)
 
