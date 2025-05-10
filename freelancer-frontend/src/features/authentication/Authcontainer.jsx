@@ -17,7 +17,9 @@ function Authcontainer() {
 
     const { user } = useUser()
     useEffect(() => {
-        if (user) navigate("/", { replace: true })
+        if ( user) navigate("/admin/dashboard", { replace: true })
+        // if (user && user.rote === 'OWNER') navigate("/owner", { replace: true })
+        // if (user && user.rote === 'FREELANCER') navigate("/freelancer", { replace: true })
     }, [user, navigate])
 
     const { isPending, error, data: otpResponse, mutateAsync } = useMutation({
@@ -30,7 +32,7 @@ function Authcontainer() {
             toast.success(message)
             setStep(2)
         }
-        catch (error) {            
+        catch (error) {
             toast.error(error?.response?.data?.message)
         }
     }
