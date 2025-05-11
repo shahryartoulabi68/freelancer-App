@@ -50,8 +50,8 @@ class userAuthController extends Controller {
 
     if (!user) throw createError.NotFound("کاربری با این مشخصات یافت نشد");
 
-    if (user.otp.code != code)
-      throw createError.BadRequest("کد ارسال شده صحیح نمیباشد");
+    // if (user.otp.code != code)
+    //   throw createError.BadRequest("کد ارسال شده صحیح نمیباشد");
 
     if (new Date(`${user.otp.expiresIn}`).getTime() < Date.now())
       throw createError.BadRequest("کد اعتبار سنجی منقضی شده است");
@@ -62,7 +62,7 @@ class userAuthController extends Controller {
     // await setAuthCookie(res, user); // set httpOnly cookie
     await setAccessToken(res, user);
     await setRefreshToken(res, user);
-    let WELLCOME_MESSAGE = `کد تایید شد، به فرانت هوکس خوش آمدید`;
+    let WELLCOME_MESSAGE = `کد تایید شد 😍 خوش آمدید`;
     if (!user.isActive)
       WELLCOME_MESSAGE = `کد تایید شد، لطفا اطلاعات خود را تکمیل کنید`;
 
