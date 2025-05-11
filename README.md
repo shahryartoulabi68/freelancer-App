@@ -68,11 +68,17 @@ The project consists of two main parts:
 
 3. Create a `.env` file with appropriate settings:
    ```
+   # Server Configuration
    PORT=5000
    APP_DB=mongodb://localhost:27017/freelancer
    ALLOW_CORS_ORIGIN=http://localhost:3000
    COOKIE_PARSER_SECRET_KEY=your-secret-key
+
+   # Kavenegar SMS Configuration
+   KAVENEGAR_API_KEY=your-kavenegar-api-key
    ```
+   
+   Note: You can find a template of these environment variables in `.env.example`. Make sure to replace the placeholder values with your actual configuration values.
 
 4. Run the project in development mode:
    ```bash
